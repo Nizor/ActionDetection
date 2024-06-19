@@ -4,4 +4,4 @@ Action Detection for ASL and Nigerian indigenous sign language using tensorflow,
 ![Training action detection](https://res.cloudinary.com/glittering-rocks-ltd/image/upload/v1718793265/c8gusrblc99t39jd7bmv.png)
 
 # Setup 
-run environment.yml file 
+run environment.yml file for conda users OR requirements.txt for pip users
