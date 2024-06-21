@@ -1,5 +1,5 @@
 import cv2
-from predict import predict_sign_language
+from predict import SignLanguagePredictor
 
 class VideoCamera:
     def __init__(self):
@@ -13,13 +13,14 @@ class VideoCamera:
         return frame if ret else None
 
 def gen_frames(camera, model):
+    predictor = SignLanguagePredictor(model)
     while True:
         frame = camera.get_frame()
         if frame is None:
             continue
-        sign = predict_sign_language(frame, model)
-        # Add the predicted sign text on the frame
-        cv2.putText(frame, f'Sign: {sign}', (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
+        action = predictor.predict(frame)
+        if action is not None:
+            cv2.putText(frame, f'Action: {action}', (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
         _, buffer = cv2.imencode('.jpg', frame)
         frame = buffer.tobytes()
         yield (b'--frame\r\n'
