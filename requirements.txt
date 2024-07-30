@@ -138,12 +138,6 @@ sounddevice==0.4.7
 soupsieve==2.5
 stack-data==0.6.3
 starlette==0.37.2
-tensorboard==2.16.2
-tensorboard-data-server==0.7.2
-tensorflow==2.16.1
-tensorflow-io-gcs-filesystem==0.37.0
-tensorflow-macos==2.16.1
-tensorflow-metal==1.1.0
 termcolor==2.4.0
 terminado==0.18.1
 threadpoolctl==3.5.0
