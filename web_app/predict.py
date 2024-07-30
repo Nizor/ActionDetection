@@ -14,7 +14,7 @@ def extract_keypoints(results):
     return np.concatenate([pose, face, lh, rh])
 
 class SignLanguagePredictor:
-    ACTION_NAMES = ['hello', 'thanks', 'I love you']
+    ACTION_NAMES = ['Black']
 
     def __init__(self, model):
         self.model = model
